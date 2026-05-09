@@ -489,12 +489,24 @@ function App() {
                             {copied === 'email' ? 'COPIED!' : 'COPY'}
                           </button>
                         </div>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '15px', marginTop: '20px' }}>
-                          <a href="https://linkedin.com/in/kanakaboina-ankith-raj-b4a7092a0/" target="_blank" rel="noreferrer" style={{ color: 'var(--color-cyan)', textDecoration: 'none' }}>LINKEDIN</a>
-                          <a href="https://github.com/Ankithraj-1312" target="_blank" rel="noreferrer" style={{ color: 'var(--color-yellow)', textDecoration: 'none' }}>GITHUB</a>
+                        {/* Re-adding Phone */}
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
+                          <span style={{ fontSize: '1.1rem' }}>+91 89856 90144</span>
+                          <button onClick={() => copyToClipboard('+918985690144', 'phone')} className="quiz-btn" style={{ padding: '3px 8px', fontSize: '0.7rem' }}>
+                            {copied === 'phone' ? 'COPIED!' : 'COPY'}
+                          </button>
                         </div>
-                        <div style={{ display: 'flex', gap: '12px', marginTop: '20px' }}>
+                        {/* Re-adding Social Links */}
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '15px', marginBottom: '20px' }}>
+                          <a href="https://linkedin.com/in/kanakaboina-ankith-raj-b4a7092a0/" target="_blank" rel="noreferrer" style={{ color: 'var(--color-cyan)', textDecoration: 'none', fontWeight: 'bold' }}>LINKEDIN</a>
+                          <a href="https://github.com/Ankithraj-1312" target="_blank" rel="noreferrer" style={{ color: 'var(--color-yellow)', textDecoration: 'none', fontWeight: 'bold' }}>GITHUB</a>
+                          <a href="https://youtube.com/@theNubeeGamer" target="_blank" rel="noreferrer" style={{ color: 'var(--color-pink)', textDecoration: 'none', fontWeight: 'bold' }}>NUBEE GAMER</a>
+                          <a href="https://youtube.com/@factscreate1" target="_blank" rel="noreferrer" style={{ color: 'var(--color-purple)', textDecoration: 'none', fontWeight: 'bold' }}>FACTSCRATE</a>
+                        </div>
+                        {/* Re-adding Action Buttons */}
+                        <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
                           <button className="cyber-button" style={{ fontSize: '0.8rem' }} onClick={() => window.open('mailto:ak.kanakaboina@gmail.com')}>SEND EMAIL</button>
+                          <button className="cyber-button" style={{ fontSize: '0.8rem', borderColor: 'var(--color-green)' }} onClick={() => window.open('https://wa.me/918985690144')}>WHATSAPP</button>
                         </div>
                       </div>
                     </div>
