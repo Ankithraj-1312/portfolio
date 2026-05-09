@@ -409,7 +409,13 @@ function App() {
                     )}
 
                     {level.items && level.items.map((item, i) => (
-                      <div key={i} className="project-card" style={{ borderBottom: i === level.items.length - 1 ? 'none' : '' }}>
+                      <div key={i} className="project-card" style={{ 
+                        border: `1px solid ${level.color}`, 
+                        background: 'rgba(255,255,255,0.03)',
+                        borderRadius: '12px',
+                        padding: '15px',
+                        marginBottom: '15px'
+                      }}>
                         <h3 style={{ color: level.color }}>{item.title}</h3>
                         {item.subtitle && <p>{item.subtitle}</p>}
                         {item.details && <p style={{ color: 'var(--color-cyan)', marginTop: '5px' }}>{item.details}</p>}
@@ -427,7 +433,12 @@ function App() {
                     {level.categories && (
                       <div className="skills-grid">
                         {level.categories.map((cat, i) => (
-                          <div key={i} className="skill-category">
+                          <div key={i} className="skill-category" style={{ 
+                            border: `1px solid ${level.color}`,
+                            background: 'rgba(255,255,255,0.03)',
+                            borderRadius: '12px',
+                            padding: '15px'
+                          }}>
                             <h3 style={{ color: level.color }}>{cat.title}</h3>
                             <ul>{cat.skills.map(s => <li key={s}>{s}</li>)}</ul>
                           </div>
