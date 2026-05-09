@@ -243,26 +243,7 @@ function App() {
     setIsWalking(false)
   }
 
-  const handleWrongAnswer = () => {
-    setHp(prev => {
-      const newHp = Math.max(0, prev - 1)
-      if (newHp === 0) {
-        SoundEngine.wrong()
-        // Delay a bit so they see the last heart disappear
-      }
-      return newHp
-    })
-  }
-
-  const resetGame = () => {
-    setHp(3)
-    setXp(0)
-    setMaxUnlockedLevel(1)
-    setStarted(false)
-    setCollectedSkills([])
-    setScrollProgress(0)
-    setInventoryOpen(false)
-  }
+  const handleWrongAnswer = () => setHp(prev => Math.max(0, prev - 1))
 
   const handleShoot = () => {
     setIsShooting(true)
@@ -548,23 +529,6 @@ function App() {
           {isShooting && <div className="laser-beam" />}
         </div>
       )}
-
-      {/* Game Over Overlay */}
-      <AnimatePresence>
-        {hp === 0 && (
-          <motion.div 
-            className="game-over-overlay"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            style={{ zIndex: 5000 }}
-          >
-            <h1 className="font-arcade" style={{ color: 'var(--color-red)', fontSize: '4rem', marginBottom: '20px', textShadow: '0 0 20px red' }}>GAME OVER</h1>
-            <p style={{ fontSize: '1.5rem', marginBottom: '40px', color: 'white' }}>Your quest ends here... for now.</p>
-            <button className="cyber-button" onClick={resetGame}>INSERT COIN (RESTART)</button>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   )
 }

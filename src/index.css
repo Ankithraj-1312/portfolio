@@ -146,6 +146,15 @@ h1, h2, h3, h4 {
   overflow: hidden;
 }
 
+/* Level Specific Panel Borders */
+.panel-cyan { border: 1px solid var(--color-cyan); box-shadow: 0 0 20px rgba(0, 240, 255, 0.15); }
+.panel-pink { border: 1px solid var(--color-pink); box-shadow: 0 0 20px rgba(255, 0, 150, 0.15); }
+.panel-yellow { border: 1px solid var(--color-yellow); box-shadow: 0 0 20px rgba(255, 200, 0, 0.15); }
+.panel-green { border: 1px solid var(--color-green); box-shadow: 0 0 20px rgba(0, 255, 100, 0.15); }
+.panel-purple { border: 1px solid var(--color-purple); box-shadow: 0 0 20px rgba(180, 0, 255, 0.15); }
+.panel-red { border: 1px solid var(--color-red); box-shadow: 0 0 20px rgba(255, 50, 50, 0.15); }
+.panel-hero { border: 2px solid var(--color-cyan); background: rgba(0, 10, 20, 0.6); }
+
 .combat-panel {
   background: rgba(20, 0, 0, 0.6);
   backdrop-filter: blur(15px);
