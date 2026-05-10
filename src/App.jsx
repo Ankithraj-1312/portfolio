@@ -473,8 +473,8 @@ function App() {
                     <h2 className="font-arcade text-gradient" style={{ marginBottom: '10px' }}>Level 6: The Scroll</h2>
                     <p style={{ color: 'var(--text-muted)', marginBottom: '30px', fontSize: '1.1rem' }}>You have unlocked the legendary Resume artifact.</p>
                     <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '30px' }}>
-                      <a href="/resume.pdf" download="Ankith_Raj_Resume.pdf" className="cyber-button" style={{ textDecoration: 'none', display: 'inline-block' }}>DOWNLOAD RESUME</a>
-                      <a href="/resume.pdf" target="_blank" rel="noreferrer" className="cyber-button" style={{ textDecoration: 'none', display: 'inline-block', borderColor: 'var(--color-cyan)' }}>REVIEW RESUME</a>
+                      <a href="/Kanakaboina_Ankith_Raj_resume%202.pdf" download="Kanakaboina_Ankith_Raj_resume_2.pdf" className="cyber-button" style={{ textDecoration: 'none', display: 'inline-block' }}>DOWNLOAD RESUME</a>
+                      <a href="/Kanakaboina_Ankith_Raj_resume%202.pdf" target="_blank" rel="noreferrer" className="cyber-button" style={{ textDecoration: 'none', display: 'inline-block', borderColor: 'var(--color-cyan)' }}>REVIEW RESUME</a>
                     </div>
                     {maxUnlockedLevel === 6 && (
                       <button className="cyber-button" style={{ borderColor: 'var(--color-green)' }} onClick={() => handleLevelComplete(7)}>FACE THE FINAL BOSS</button>
@@ -516,8 +516,8 @@ function App() {
                         </div>
                         {/* Re-adding Action Buttons */}
                         <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-                          <button className="cyber-button" style={{ fontSize: '0.8rem' }} onClick={() => window.open('mailto:ak.kanakaboina@gmail.com')}>SEND EMAIL</button>
-                          <button className="cyber-button" style={{ fontSize: '0.8rem', borderColor: 'var(--color-green)' }} onClick={() => window.open('https://wa.me/918985690144')}>WHATSAPP</button>
+                          <a href="mailto:ak.kanakaboina@gmail.com" className="cyber-button" style={{ fontSize: '0.8rem', textDecoration: 'none', display: 'inline-block' }}>SEND EMAIL</a>
+                          <a href="https://wa.me/918985690144" target="_blank" rel="noreferrer" className="cyber-button" style={{ fontSize: '0.8rem', borderColor: 'var(--color-green)', textDecoration: 'none', display: 'inline-block' }}>WHATSAPP</a>
                         </div>
                       </div>
                     </div>
