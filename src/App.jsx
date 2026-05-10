@@ -138,12 +138,13 @@ function QuizComponent({ question, options, correctAnswerIndex, onLevelComplete,
         setTimeout(() => {
           setIsExploding(false)
           setShowDefeated(true)
-        }, 800)
+        }, 500)
         setTimeout(() => { 
           setIsRemoved(true)
           if (onLevelComplete) onLevelComplete() 
-        }, 2200)
-      }, 150)
+        }, 1500)
+      }, 100)
+    }
     } else {
       SoundEngine.wrong()
       setHpFlash(true)
