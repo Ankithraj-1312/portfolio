@@ -474,7 +474,7 @@ function App() {
                     <p style={{ color: 'var(--text-muted)', marginBottom: '30px', fontSize: '1.1rem' }}>You have unlocked the legendary Resume artifact.</p>
                     <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '30px' }}>
                       <a href="/Kanakaboina_Ankith_Raj_resume%202.pdf" download="Kanakaboina_Ankith_Raj_resume_2.pdf" className="cyber-button" style={{ textDecoration: 'none', display: 'inline-block' }}>DOWNLOAD RESUME</a>
-                      <a href="/Kanakaboina_Ankith_Raj_resume%202.pdf" target="_blank" rel="noreferrer" className="cyber-button" style={{ textDecoration: 'none', display: 'inline-block', borderColor: 'var(--color-cyan)' }}>REVIEW RESUME</a>
+                      <a href="/Kanakaboina_Ankith_Raj_resume%202.pdf" target="_blank" rel="noopener noreferrer" className="cyber-button" style={{ textDecoration: 'none', display: 'inline-block', borderColor: 'var(--color-cyan)' }}>REVIEW RESUME</a>
                     </div>
                     {maxUnlockedLevel === 6 && (
                       <button className="cyber-button" style={{ borderColor: 'var(--color-green)' }} onClick={() => handleLevelComplete(7)}>FACE THE FINAL BOSS</button>
@@ -491,7 +491,7 @@ function App() {
                   <div className="content-box glass-panel panel-red" style={{ maxWidth: '700px', width: '100%' }}>
                     <h2 className="font-arcade" style={{ color: 'var(--color-red)', marginBottom: '25px' }}>Level 7: Final Boss</h2>
                     <div style={{ display: 'flex', gap: '25px', alignItems: 'center', padding: '25px', background: 'rgba(0,0,0,0.5)', borderRadius: '15px', border: '1px solid var(--color-red)', flexWrap: 'wrap' }}>
-                      <img src="/avatar.png" alt="Ankith Raj" style={{ width: '130px', height: '130px', objectFit: 'cover', objectPosition: 'center 20%', borderRadius: '15px', border: '2px solid var(--color-red)' }} />
+                      <img src="/avatar.png" alt="Ankith Raj" loading="lazy" style={{ width: '130px', height: '130px', objectFit: 'cover', objectPosition: 'center 20%', borderRadius: '15px', border: '2px solid var(--color-red)' }} />
                       <div style={{ textAlign: 'left', flex: 1, minWidth: '200px' }}>
                         <h3 style={{ marginBottom: '15px', color: 'var(--text-main)' }}>Summon Ankith</h3>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
@@ -509,15 +509,15 @@ function App() {
                         </div>
                         {/* Re-adding Social Links */}
                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '15px', marginBottom: '20px' }}>
-                          <a href="https://linkedin.com/in/kanakaboina-ankith-raj-b4a7092a0/" target="_blank" rel="noreferrer" style={{ color: 'var(--color-cyan)', textDecoration: 'none', fontWeight: 'bold' }}>LINKEDIN</a>
-                          <a href="https://github.com/Ankithraj-1312" target="_blank" rel="noreferrer" style={{ color: 'var(--color-yellow)', textDecoration: 'none', fontWeight: 'bold' }}>GITHUB</a>
-                          <a href="https://youtube.com/@theNubeeGamer" target="_blank" rel="noreferrer" style={{ color: 'var(--color-pink)', textDecoration: 'none', fontWeight: 'bold' }}>NUBEE GAMER</a>
-                          <a href="https://youtube.com/@factscreate1" target="_blank" rel="noreferrer" style={{ color: 'var(--color-purple)', textDecoration: 'none', fontWeight: 'bold' }}>FACTSCRATE</a>
+                          <a href="https://linkedin.com/in/kanakaboina-ankith-raj-b4a7092a0/" target="_blank" rel="noopener noreferrer" className="social-link" style={{ color: 'var(--color-cyan)', textDecoration: 'none', fontWeight: 'bold' }}>LINKEDIN</a>
+                          <a href="https://github.com/Ankithraj-1312" target="_blank" rel="noopener noreferrer" className="social-link" style={{ color: 'var(--color-yellow)', textDecoration: 'none', fontWeight: 'bold' }}>GITHUB</a>
+                          <a href="https://youtube.com/@theNubeeGamer" target="_blank" rel="noopener noreferrer" className="social-link" style={{ color: 'var(--color-pink)', textDecoration: 'none', fontWeight: 'bold' }}>NUBEE GAMER</a>
+                          <a href="https://youtube.com/@factscreate1" target="_blank" rel="noopener noreferrer" className="social-link" style={{ color: 'var(--color-purple)', textDecoration: 'none', fontWeight: 'bold' }}>FACTSCRATE</a>
                         </div>
                         {/* Re-adding Action Buttons */}
                         <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
                           <a href="mailto:ak.kanakaboina@gmail.com" className="cyber-button" style={{ fontSize: '0.8rem', textDecoration: 'none', display: 'inline-block' }}>SEND EMAIL</a>
-                          <a href="https://wa.me/918985690144" target="_blank" rel="noreferrer" className="cyber-button" style={{ fontSize: '0.8rem', borderColor: 'var(--color-green)', textDecoration: 'none', display: 'inline-block' }}>WHATSAPP</a>
+                          <a href="https://wa.me/918985690144" target="_blank" rel="noopener noreferrer" className="cyber-button" style={{ fontSize: '0.8rem', borderColor: 'var(--color-green)', textDecoration: 'none', display: 'inline-block' }}>WHATSAPP</a>
                         </div>
                       </div>
                     </div>
