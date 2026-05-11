@@ -529,9 +529,10 @@ h1, h2, h3, h4 {
 }
 
 @keyframes explodeShatter {
-  0% { transform: scale(1); }
-  20% { transform: scale(1.2) rotate(2deg); }
-  100% { transform: scale(0) rotate(-20deg); opacity: 0; }
+  0% { transform: scale(1); filter: brightness(1); border-color: red; }
+  20% { transform: scale(1.1); filter: brightness(2) drop-shadow(0 0 50px red); }
+  50% { transform: scale(0.9) rotate(5deg); opacity: 1; }
+  100% { transform: scale(0) rotate(-10deg); opacity: 0; }
 }
 
 /* Screen Shake */

@@ -121,7 +121,6 @@ function QuizComponent({ question, options, correctAnswerIndex, onLevelComplete,
   const [isRemoved, setIsRemoved] = useState(false)
   const [bossHp, setBossHp] = useState(100)
   const [hpFlash, setHpFlash] = useState(false)
-  const [isExploding, setIsExploding] = useState(false)
 
   const handleSelect = (index) => {
     if (answered) return
@@ -134,17 +133,9 @@ function QuizComponent({ question, options, correctAnswerIndex, onLevelComplete,
       setTimeout(() => {
         SoundEngine.defeat()
         if (onShoot) onShoot()
-        setIsExploding(true)
-        setTimeout(() => {
-          setIsExploding(false)
-          setShowDefeated(true)
-        }, 500)
-        setTimeout(() => { 
-          setIsRemoved(true)
-          if (onLevelComplete) onLevelComplete() 
-        }, 1500)
-      }, 100)
-    }
+        setShowDefeated(true)
+        setTimeout(() => { setIsRemoved(true); if (onLevelComplete) onLevelComplete() }, 2500)
+      }, 300)
     } else {
       SoundEngine.wrong()
       setHpFlash(true)
@@ -158,14 +149,14 @@ function QuizComponent({ question, options, correctAnswerIndex, onLevelComplete,
     <AnimatePresence>
       {!isRemoved && (
         <motion.div
-          className="content-box combat-panel"
+          className={`content-box combat-panel ${showDefeated ? 'boss-explosion' : ''}`}
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.8 }}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.5 }}
         >
           {!showDefeated ? (
-            <div className={`quiz-box ${isExploding ? 'boss-explosion' : ''}`}>
+            <div className="quiz-box">
               <h4 style={{ color: 'var(--color-red)', marginBottom: '10px', textAlign: 'center' }}>!! MINI-BOSS CHALLENGE !!</h4>
               <div className="boss-hp-wrap">
                 <span className="boss-hp-label">BOSS HP</span>
