@@ -8,18 +8,17 @@ import { LEVELS } from './constants'
 // Shared mutable mouse ref
 const mouseRef = { x: 0, y: 0 }
 
-function ParticleSwarm({ count = 600, performanceMode = false }) {
-  const actualCount = performanceMode ? Math.floor(count / 3) : count
+function ParticleSwarm({ count = 600 }) {
   const points = useRef()
   const positions = useMemo(() => {
-    const p = new Float32Array(actualCount * 3)
-    for (let i = 0; i < actualCount; i++) {
+    const p = new Float32Array(count * 3)
+    for (let i = 0; i < count; i++) {
       p[i * 3] = (Math.random() - 0.5) * 25
       p[i * 3 + 1] = (Math.random() - 0.5) * 25
       p[i * 3 + 2] = (Math.random() - 0.5) * 25
     }
     return p
-  }, [actualCount])
+  }, [count])
   useFrame((state) => {
     if (points.current) {
       points.current.rotation.y = state.clock.elapsedTime * 0.05
@@ -41,7 +40,7 @@ function MouseSpotlight() {
   return <pointLight ref={lightRef} distance={12} intensity={10} color="#00f0ff" />
 }
 
-function SceneBackground({ performanceMode = false }) {
+function SceneBackground() {
   const group = useRef()
   const obj1 = useRef()
   const obj2 = useRef()
@@ -64,8 +63,8 @@ function SceneBackground({ performanceMode = false }) {
       <MouseSpotlight />
       <ambientLight intensity={0.1} />
       <group ref={group}>
-        <Stars radius={50} depth={50} count={performanceMode ? 500 : 1500} factor={4} saturation={1} fade speed={1} />
-        <ParticleSwarm count={600} performanceMode={performanceMode} />
+        <Stars radius={50} depth={50} count={1500} factor={4} saturation={1} fade speed={1} />
+        <ParticleSwarm count={600} />
         <Float speed={2} rotationIntensity={1} floatIntensity={2} position={[4, 2, -5]}>
           <mesh ref={obj1}>
             <octahedronGeometry args={[1.5, 0]} />
@@ -207,7 +206,6 @@ function App() {
   const [collectedSkills, setCollectedSkills] = useState([])
   const [achievements, setAchievements] = useState([])
   const [inventoryOpen, setInventoryOpen] = useState(false)
-  const [performanceMode, setPerformanceMode] = useState(false)
 
   const scrollTimeout = useRef(null)
   const scrollContainerRef = useRef(null)
@@ -291,7 +289,7 @@ function App() {
 
   return (
     <div
-      className={`${screenShake ? 'screen-shake' : ''} ${performanceMode ? 'performance-mode' : ''}`}
+      className={screenShake ? 'screen-shake' : ''}
       style={{ width: '100vw', height: '100vh', background: '#030308', position: 'relative', overflow: 'hidden' }}
       onMouseMove={handleMouseMove}
     >
@@ -366,9 +364,6 @@ function App() {
           <button className="audio-toggle" onClick={() => setIsMuted(!isMuted)}>
             <span className="audio-icon">{isMuted ? '🔇' : '🔊'}</span>
           </button>
-          <button className={`audio-toggle ${performanceMode ? 'active' : ''}`} onClick={() => setPerformanceMode(!performanceMode)} title="Toggle Performance Mode">
-            <span style={{ fontSize: '0.7rem', fontFamily: 'Orbitron' }}>{performanceMode ? '⚡ HIGH' : '🔋 LOW'}</span>
-          </button>
         </div>
       </div>
 
@@ -376,7 +371,7 @@ function App() {
       <Canvas camera={{ position: [0, 0, 5], fov: 75 }} style={{ position: 'absolute', top: 0, left: 0, zIndex: 1 }}>
         <color attach="background" args={[maxUnlockedLevel >= 7 ? '#100000' : '#030308']} />
         <Suspense fallback={null}>
-          <SceneBackground performanceMode={performanceMode} />
+          <SceneBackground />
         </Suspense>
       </Canvas>
 
